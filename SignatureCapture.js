@@ -8,7 +8,8 @@ var {
     requireNativeComponent,
     View,
     UIManager,
-    DeviceEventEmitter
+    DeviceEventEmitter,
+    ViewPropTypes
 } = ReactNative;
 
 class SignatureCapture extends React.Component {
@@ -89,7 +90,7 @@ class SignatureCapture extends React.Component {
 }
 
 SignatureCapture.propTypes = {
-  ...View.propTypes,
+  ...ViewPropTypes,
     rotateClockwise: PropTypes.bool,
     square: PropTypes.bool,
     saveImageFileInExtStorage: PropTypes.bool,
@@ -101,7 +102,8 @@ SignatureCapture.propTypes = {
     minStrokeWidth: PropTypes.number,
     maxStrokeWidth: PropTypes.number,
     strokeColor: PropTypes.string,
-    backgroundColor: PropTypes.string
+    backgroundColor: PropTypes.string,
+    fileName:PropTypes.string,
 };
 
 var RSSignatureView = requireNativeComponent('RSSignatureView', SignatureCapture, {
